@@ -1,0 +1,206 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "HB3.Predator",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_71289 { 
+   	label=HB3
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Hai71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Hai</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Igel71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Igel</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Loewe71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Loewe</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Predator71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(I)Predator</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ hunt(prey: Tier)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ primaryPray(): Tier</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#F1E5FD"
+];
+
+Saeugetier71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Saeugetier</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Tier71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Tier</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+   amountOfFood: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   animalNoise: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   habitatSize: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   inHabitat: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   land: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   landAnimal: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   naturalHabitat: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   origin: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   pray: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   sea: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   temp: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   weight: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ amountOfFood(): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ animalNoise(): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getName()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ primaryPray()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ printHabitatSize()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Woelf71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Woelf</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Wombat71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Wombat</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+'edges    
+Predator71289 -> Hai71289[arrowhead=none, arrowtail=empty, dir=both];
+Predator71289 -> Loewe71289[arrowhead=none, arrowtail=empty, dir=both];
+Predator71289 -> Woelf71289[arrowhead=none, arrowtail=empty, dir=both];
+Saeugetier71289 -> Igel71289[arrowhead=none, arrowtail=empty, dir=both];
+Saeugetier71289 -> Loewe71289[arrowhead=none, arrowtail=empty, dir=both];
+Saeugetier71289 -> Woelf71289[arrowhead=none, arrowtail=empty, dir=both];
+Saeugetier71289 -> Wombat71289[arrowhead=none, arrowtail=empty, dir=both];
+Tier71289 -> Saeugetier71289[arrowhead=none, arrowtail=empty, dir=both];
+    
+}
+@enduml

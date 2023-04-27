@@ -1,0 +1,487 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": true,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "HB3.Zoo",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_71289 { 
+   	label=HB3
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Fische71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="MID" >Fische</TD></TR>
+<TR><TD>{Absratct}</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   salzwasserfisch: boolean [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getName()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+   Aquarium71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="MID" >Aquarium</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   salzwasser: boolean [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addAnimal(tier: Fische)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Freizeiteinrichtung71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="MID" >Freizeiteinrichtung</TD></TR>
+<TR><TD>{Absratct}</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Gebaeude71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="MID" >Gebaeude</TD></TR>
+<TR><TD>{Absratct}</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   id: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   name: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   posX: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   posY: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   size: int [1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Gehege71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="MID" >Gehege</TD></TR>
+<TR><TD>{Absratct}</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   tiere: ArrayList&lt;Tier&gt; [0..*]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Kaefig71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="MID" >Kaefig</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   baeume: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   hoelle: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   seile: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   tranke: boolean [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addAnimal(tier: Tier)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Insekten71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="MID" >Insekten</TD></TR>
+<TR><TD>{Absratct}</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Hai71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="MID" >Hai</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Igel71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="MID" >Igel</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Insekten71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="MID" >Insekten</TD></TR>
+<TR><TD>{Absratct}</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Flyable71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+	<TR><TD ALIGN="MID" >&lt;&lt;Interface&gt;&gt;</TD></TR>
+<TR><TD ALIGN="MID" >Flyable</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ fly()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ land()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#F1E5FD"
+];
+
+Predator71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+	<TR><TD ALIGN="MID" >&lt;&lt;Interface&gt;&gt;</TD></TR>
+<TR><TD ALIGN="MID" >Predator</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ hunt(prey: Tier)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ primaryPray(): Tier</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#F1E5FD"
+];
+
+Swimmable71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+	<TR><TD ALIGN="MID" >&lt;&lt;Interface&gt;&gt;</TD></TR>
+<TR><TD ALIGN="MID" >Swimmable</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ dive()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#F1E5FD"
+];
+
+Karpfen71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="MID" >Karpfen</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Loewe71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="MID" >Loewe</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Reptilien71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="MID" >Reptilien</TD></TR>
+<TR><TD>{Absratct}</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Restaurant71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="MID" >Restaurant</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   anzSitzplaetze: int [1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Shop71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="MID" >Shop</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   oeffnungsZeiten: String [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Spielplatz71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="MID" >Spielplatz</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   anzRutschen: int [1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Saeugetier71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="MID" >Saeugetier</TD></TR>
+<TR><TD>{Absratct}</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Schmetterling71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="MID" >Schmetterling</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Spinnentiere71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="MID" >Spinnentiere</TD></TR>
+<TR><TD>{Absratct}</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Tier71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="MID" >Tier</TD></TR>
+<TR><TD>{Absratct}</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+   amountOfFood: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   animalNoise: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   habitatSize: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   land: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   landAnimal: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   naturalHabitat: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   origin: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   pray: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   sea: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   temp: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   weight: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ amountOfFood(): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ animalNoise(): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getName()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ primaryPray()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ printHabitatSize()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Voegel71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="MID" >Voegel</TD></TR>
+<TR><TD>{Absratct}</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Wirbellose71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="MID" >Wirbellose</TD></TR>
+<TR><TD>{Absratct}</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Woelf71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="MID" >Woelf</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+   Ente71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >Ente</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Wombat71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="MID" >Wombat</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Zoo71289[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="MID" >Zoo</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ main(args: String[])</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+'edges
+Flyable71289 -> Ente71289[arrowhead=empty, arrowtail=empty, dir=both];
+Flyable71289 -> Schmetterling71289[arrowhead=none, arrowtail=empty, dir=both];
+Predator71289 -> Hai71289[arrowhead=none, arrowtail=empty, dir=both];
+Predator71289 -> Loewe71289[arrowhead=none, arrowtail=empty, dir=both];
+Predator71289 -> Woelf71289[arrowhead=none, arrowtail=empty, dir=both];
+Swimmable71289 -> Ente71289[arrowhead=none, arrowtail=empty, dir=both];
+Swimmable71289 -> Karpfen71289[arrowhead=none, arrowtail=empty, dir=both];
+Freizeiteinrichtung71289 -> Restaurant71289[arrowhead=none, arrowtail=empty, dir=both];
+Freizeiteinrichtung71289 -> Shop71289[arrowhead=none, arrowtail=empty, dir=both];
+Freizeiteinrichtung71289 -> Spielplatz71289[arrowhead=none, arrowtail=empty, dir=both];
+Gebaeude71289 -> Freizeiteinrichtung71289[arrowhead=none, arrowtail=empty, dir=both];
+Gebaeude71289 -> Gehege71289[arrowhead=none, arrowtail=empty, dir=both];
+Gehege71289 -> Aquarium71289[arrowhead=none, arrowtail=empty, dir=both];
+Gehege71289 -> Kaefig71289[arrowhead=none, arrowtail=empty, dir=both];
+Gehege71289 -> Tier71289[label="tiere[0..*]"];
+Fische71289 -> Hai71289[arrowhead=none, arrowtail=empty, dir=both];
+Fische71289 -> Karpfen71289[arrowhead=none, arrowtail=empty, dir=both];
+Insekten71289 -> Schmetterling71289[arrowhead=none, arrowtail=empty, dir=both];
+Saeugetier71289 -> Igel71289[arrowhead=none, arrowtail=empty, dir=both];
+Saeugetier71289 -> Loewe71289[arrowhead=none, arrowtail=empty, dir=both];
+Saeugetier71289 -> Woelf71289[arrowhead=none, arrowtail=empty, dir=both];
+Saeugetier71289 -> Wombat71289[arrowhead=none, arrowtail=empty, dir=both];
+Tier71289 -> Fische71289[arrowhead=none, arrowtail=empty, dir=both];
+Tier71289 -> Insekten71289[arrowhead=none, arrowtail=empty, dir=both];
+Tier71289 -> Reptilien71289[arrowhead=none, arrowtail=empty, dir=both];
+Tier71289 -> Saeugetier71289[arrowhead=none, arrowtail=empty, dir=both];
+Tier71289 -> Spinnentiere71289[arrowhead=none, arrowtail=empty, dir=both];
+Tier71289 -> Voegel71289[arrowhead=none, arrowtail=empty, dir=both];
+Tier71289 -> Wirbellose71289[arrowhead=none, arrowtail=empty, dir=both];
+    
+}
+@enduml
